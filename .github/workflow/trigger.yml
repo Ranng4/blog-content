@@ -1,0 +1,16 @@
+name: Trigger Main Repo Build
+
+on:
+  push:
+    branches: [ main ] # ⚠️ 注意确认分支名是 main 还是 master
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger repository dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.DISPATCH_TOKEN }}
+          repository: Ranng4/blog-content # 你的主仓库
+          event-type: content-updated       # 发送的信号暗号
