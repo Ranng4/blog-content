@@ -12,5 +12,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.DISPATCH_TOKEN }}
-          repository: Ranng4/blog-content # 你的主仓库
+          repository: Ranng4/mizuki_blog # 你的主仓库
           event-type: content-updated       # 发送的信号暗号
